@@ -1,6 +1,7 @@
 {
     "version": 2,
     "rewrites": [
-        { "source": "/getFreshInstaPost", "destination": "/api/getFreshInstaPost" }
+        { "source": "/getFreshInstaPost", "destination": "/api/getFreshInstaPost" },
+        { "source": "/", "destination": "/api/getFreshInstaPost" }
     ]
 }

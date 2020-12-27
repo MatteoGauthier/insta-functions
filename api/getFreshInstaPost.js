@@ -1,20 +1,14 @@
 const { getTopicsImage, getImageVision, randomInteger, getMeta } = require("../utils");
 const { createApi } = require("unsplash-js");
 
-const unsplash = createApi({
-  accessKey: process.env.UNSPLASH,
-});
-
-const { Telegraf } = require("telegraf");
-
-const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
-
 module.exports = async (req, res) => {
-  res.json({
-    body: req.body,
-    query: req.query,
-    cookies: req.cookies,
+  const unsplash = createApi({
+    accessKey: process.env.UNSPLASH,
   });
+
+  const { Telegraf } = require("telegraf");
+
+  const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
   const topicsImages = await getTopicsImage();
   console.log(topicsImages[randomInteger(0, topicsImages.length - 1)].id);
@@ -39,7 +33,7 @@ module.exports = async (req, res) => {
   await bot.telegram.sendMessage(process.env.chat_id, meta.download_url);
 
   res.json({
-    body: 'Yeaaa',
+    body: {text:'Yeahh'},
     query: req.query,
     cookies: req.cookies,
   });
