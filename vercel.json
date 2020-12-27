@@ -2,8 +2,5 @@
     "version": 2,
     "rewrites": [
         { "source": "/getFreshInstaPost", "destination": "/api/getFreshInstaPost" }
-    ],
-    "github": {
-        "silent": "true"
-    }
+    ]
 }
