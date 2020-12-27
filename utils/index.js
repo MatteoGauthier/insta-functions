@@ -52,7 +52,7 @@ module.exports = {
         "#sunsetsniper",
       ].join(" "),
       image: `https://source.unsplash.com/${id}`,
-      download_url: `https://unplash.com/photos/${id}`,
+      download_url: `https://unsplash.com/photos/${id}`,
     };
   },
   randomInteger(min, max) {
