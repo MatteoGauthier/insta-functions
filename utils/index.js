@@ -1,6 +1,5 @@
 require("dotenv").config();
 const fetch = require("node-fetch");
-const fs = require("fs/promises");
 
 if (!globalThis.fetch) {
   globalThis.fetch = fetch;
