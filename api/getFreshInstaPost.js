@@ -21,11 +21,11 @@ module.exports = async (req, res) => {
 
   const formatted = `Shot on ${meta.exif} by ${meta.author}
 
-  📍 ${meta.location}
-  ✈️ DM me to Download
+📍 ${meta.location}
+✈️ DM me to Download
   
       
-  ${meta.tags}`;
+${meta.tags}`;
 
   await bot.telegram.sendMessage(process.env.chat_id, formatted);
 
