@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "clipboardy": "^2.3.0",
+    "discord-webhook-node": "^1.1.8",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1",
+    "telegraf": "^3.38.0",
+    "unsplash-js": "^7.0.2"
+  }
+}
