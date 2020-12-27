@@ -1,4 +1,4 @@
-const { getTopicsImage, getImageVision, randomInteger, getMeta } = require("./utils");
+const { getTopicsImage, getImageVision, randomInteger, getMeta } = require("../utils");
 const { createApi } = require("unsplash-js");
 
 const unsplash = createApi({
