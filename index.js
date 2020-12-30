@@ -31,7 +31,7 @@ const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
   await bot.telegram.sendMessage(process.env.chat_id, formatted);
 
   await bot.telegram.sendPhoto(process.env.chat_id, meta.image);
-  await bot.telegram.sendMessage(process.env.chat_id, meta.download_url);
-  await bot.telegram.sendMessage(process.env.chat_id, 'https://insta-functions.vercel.app/getFreshInstaPost');
+  await bot.telegram.sendMessage(process.env.chat_id, meta.download_url + '\n\n https://insta-functions.vercel.app/getFreshInstaPost');
+  await bot.telegram.sendMessage(process.env.chat_id, );
 
 })();
