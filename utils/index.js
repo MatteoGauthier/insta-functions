@@ -12,11 +12,13 @@ const unsplash = createApi({
 });
 
 module.exports = {
-  async getTopicsImage(topic = "wallpapers") {
-    const data = await (
-      await fetch(`https://api.unsplash.com/topics/${topic}/photos?client_id=${process.env.UNSPLASH}&per_page=100`)
-    ).json();
 
+  async getTopicsImage(topic = "wallpapers") {
+    function randomPage(min,max) {return Math.floor(Math.random() * (max - min + 1)) + min;}
+    const data = await (
+      await fetch(`https://api.unsplash.com/topics/${topic}/photos?client_id=${process.env.UNSPLASH}&per_page=100&page=${randomPage(1,30)}`)
+    ).json();
+    // console.log(data);
     return data;
   },
 

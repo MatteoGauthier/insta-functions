@@ -2,6 +2,8 @@ const { getTopicsImage, getImageVision, randomInteger, getMeta } = require("../u
 const { createApi } = require("unsplash-js");
 
 module.exports = async (req, res) => {
+  const topic = req.query.topic ? req.query.topic : "wallpapers"
+
   const unsplash = createApi({
     accessKey: process.env.UNSPLASH,
   });
@@ -10,7 +12,7 @@ module.exports = async (req, res) => {
 
   const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
-  const topicsImages = await getTopicsImage();
+  const topicsImages = await getTopicsImage(topic);
   console.log(topicsImages[randomInteger(0, topicsImages.length - 1)].id);
   const { response: image } = await unsplash.photos.get({
     photoId: topicsImages[randomInteger(0, topicsImages.length)].id,
